@@ -1,20 +1,20 @@
 import { readFileSync } from "fs";
 
 import { parseInputLines } from "./inputParser.js";
+import { produceReport } from "./outputReport.js";
 
-function main() {
+async function main() {
   console.info("Starting RB Robots");
 
   const filePath = "input-instructions.txt";
   const fileContents = readFileSync(filePath, "utf8").toString();
-  console.info(fileContents);
+  console.debug("File contents", fileContents);
 
   const lines: string[] = fileContents.split(/\r?\n/).filter((line) => line.trim() !== "");
-  console.info(lines);
+  console.debug("Split and filtered lines", lines);
 
   const { grid, robots } = parseInputLines(lines);
-  console.info(grid);
-  console.info(robots);
+  console.debug("Parsed input lines", { grid, robots });
 
   robots.forEach((robot) => {
     robot.ProcessInstructions(grid);
@@ -22,10 +22,11 @@ function main() {
       grid.AddScent({ position: robot.GetPosition(), orientation: robot.GetOrientation() });
     }
   });
+  console.info("Processed all robot instructions");
 
-  console.log("Processed all robot instructions");
-  console.log(robots);
-  // TODO: produce report
+  await produceReport(robots);
+
+  console.info("End of RB Robots");
 }
 
-main();
+await main();
