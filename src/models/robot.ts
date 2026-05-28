@@ -1,4 +1,4 @@
-import { Grid, type GridPosition, type ScentPosition } from "./grid.js";
+import { Grid, type GridPosition } from "./grid.js";
 
 export type RobotOrientation = "N" | "E" | "S" | "W";
 export type RobotInstruction = "L" | "R" | "F";
@@ -37,7 +37,7 @@ export class Robot {
           this.rotate(instruction);
           break;
         case "F":
-          this.moveForward(instruction, grid);
+          this.moveForward(grid);
           break;
         default:
           throw new Error("Invalid instruction");
@@ -77,7 +77,7 @@ export class Robot {
     }
   }
 
-  private moveForward(instruction: Exclude<RobotInstruction, "L" | "R">, grid: Grid): void {
+  private moveForward(grid: Grid): void {
     if (
       grid
         .GetScents()
@@ -89,17 +89,18 @@ export class Robot {
       return;
     }
 
-    const nextPosition = this.getNextPosition();
+    const nextPosition = this.getNextForwardPosition();
     const validNextPosition = grid.CheckValidPosition(nextPosition);
 
     if (!validNextPosition) {
       this.status = "LOST";
+      return;
     }
 
     this.position = nextPosition;
   }
 
-  private getNextPosition(): GridPosition {
+  private getNextForwardPosition(): GridPosition {
     switch (this.orientation) {
       case "N":
         return { x: this.position.x, y: this.position.y + 1 };
