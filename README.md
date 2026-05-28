@@ -30,7 +30,7 @@ npm run test
 
 # Code Quality
 
-This project uses prettier, eslint, and TypeScript to keep a standard code style and help with code maintenance. All of the checks should run in CI to keep the main branch in-line with standards.
+This project uses prettier, eslint, and TypeScript to keep a standard code style and help with code maintenance. The linting and build checks should run in CI to keep the main branch in-line with standards.
 
 ```
 npm run format
