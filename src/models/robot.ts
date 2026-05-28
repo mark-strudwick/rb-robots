@@ -1,4 +1,4 @@
-import { type GridPosition } from "./grid";
+import { type GridPosition } from "./grid.js";
 
 export type RobotOrientation = "N" | "E" | "S" | "W";
 export type RobotInstruction = "L" | "R" | "F";

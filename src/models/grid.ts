@@ -1,4 +1,4 @@
-import { type RobotOrientation } from "./robot";
+import { type RobotOrientation } from "./robot.js";
 
 export type GridPosition = { x: number; y: number };
 
