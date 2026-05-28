@@ -53,28 +53,22 @@ export class Robot {
       case "L":
         if (this.orientation === "N") {
           this.orientation = "W";
-        }
-        if (this.orientation === "E") {
+        } else if (this.orientation === "E") {
           this.orientation = "N";
-        }
-        if (this.orientation === "S") {
+        } else if (this.orientation === "S") {
           this.orientation = "E";
-        }
-        if (this.orientation === "W") {
+        } else if (this.orientation === "W") {
           this.orientation = "S";
         }
         break;
       case "R":
         if (this.orientation === "N") {
           this.orientation = "E";
-        }
-        if (this.orientation === "E") {
+        } else if (this.orientation === "E") {
           this.orientation = "S";
-        }
-        if (this.orientation === "S") {
+        } else if (this.orientation === "S") {
           this.orientation = "W";
-        }
-        if (this.orientation === "W") {
+        } else if (this.orientation === "W") {
           this.orientation = "N";
         }
         break;
@@ -108,13 +102,13 @@ export class Robot {
   private getNextPosition(): GridPosition {
     switch (this.orientation) {
       case "N":
-        return { x: this.position.x, y: (this.position.y += 1) };
+        return { x: this.position.x, y: this.position.y + 1 };
       case "E":
-        return { x: (this.position.x += 1), y: this.position.y };
+        return { x: this.position.x + 1, y: this.position.y };
       case "S":
         return { x: this.position.x, y: this.position.y - 1 };
       case "W":
-        return { x: (this.position.x -= 1), y: this.position.y };
+        return { x: this.position.x - 1, y: this.position.y };
       default:
         throw new Error("Invalid");
     }

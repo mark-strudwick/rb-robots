@@ -10,8 +10,8 @@ describe("ProcessInstructions", () => {
 
     robot.ProcessInstructions(grid);
 
-    expect(robot.GetStatus()).toBe("OK");
-    expect(robot.GetPosition()).toBe({ x: 1, y: 3 });
-    expect(robot.GetOrientation()).toBe("W");
+    expect(robot.GetStatus()).toEqual("OK");
+    expect(robot.GetPosition()).toEqual({ x: 1, y: 3 });
+    expect(robot.GetOrientation()).toEqual("W");
   });
 });

@@ -8,7 +8,7 @@ describe("CheckValidPosition", () => {
 
     const result = grid.CheckValidPosition({ x: 1, y: 2 });
 
-    expect(result).toBe(true);
+    expect(result).toEqual(true);
   });
 
   it("returns false when given a invalid grid position", () => {
@@ -16,6 +16,6 @@ describe("CheckValidPosition", () => {
 
     const result = grid.CheckValidPosition({ x: 4, y: 2 });
 
-    expect(result).toBe(false);
+    expect(result).toEqual(false);
   });
 });
