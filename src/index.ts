@@ -1,7 +1,7 @@
 import { readFileSync } from "fs";
 
 import { parseInputLines } from "./inputParser.js";
-import { produceReport } from "./outputReport.js";
+import { produceReport } from "./report.js";
 
 async function main() {
   console.info("Starting RB Robots");

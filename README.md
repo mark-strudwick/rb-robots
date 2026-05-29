@@ -43,6 +43,8 @@ npm run build
 - A UI to watch the robots move over time would be amazing!
 - The robot is given a grid instance to get access to the scents and check valid position method, however, it doesn't quite feel right for the robot to know about the grid. Given more time, I would use a "controller" that manages robots and gives them instructions, while the robot only holds state.
 - A production suitable logger (Pino) for structured logs and to set log levels for reduced debug noise.
-- Validation could be improved to be stricter on inputs, for example, line lengths must be less than 100 characters.
-- Error handling... currently, when an unexpected scenario occurs, an error is thrown and causes the program to exit. These scenarios could be handled more gracefully to provide error context to the user, and possibly continue the program for valid inputs/robots.
+- Validation could be stricter on inputs, for example, line lengths must be less than 100 characters.
+- Error handling... currently, when an unexpected scenario occurs, an error is thrown and causes the program to exit. These scenarios could be handled more gracefully to provide error context to the user, and possibly continue the program for valid inputs/robots (depending on requirements).
 - It would be nice if the input was more interactive, rather than asking the user to update a text file.
+- The robot "rotate" method hardcodes the different orientation options. There is another method that uses an array of the orientations, indexed by the current orientation, and then move left/right through the array to get the next orientation. As there are only 8 options, it's not too bad to hardcode them.
+- Use a bundler to build a minified js asset, rather than directly running the TS files with tsx.

@@ -42,9 +42,6 @@ export class Robot {
         default:
           throw new Error("Invalid instruction");
       }
-
-      // if it's F then handle forward
-      // check if there's a scent where it wants to go
     });
   }
 
