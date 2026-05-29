@@ -1,5 +1,5 @@
-import { Grid } from "./models/grid.js";
-import { Robot, type RobotInstruction, type RobotOrientation } from "./models/robot.js";
+import { Grid } from "./models/grid.ts";
+import { Robot, type RobotInstruction, type RobotOrientation } from "./models/robot.ts";
 
 export function parseInputLines(input: string[]): { grid: Grid; robots: Robot[] } {
   // TODO: Validate inputs?

@@ -1,4 +1,4 @@
-import { type RobotOrientation } from "./robot.js";
+import { type RobotOrientation } from "./robot.ts";
 
 export type GridPosition = { x: number; y: number };
 export type ScentPosition = { position: GridPosition; orientation: RobotOrientation };

@@ -1,7 +1,7 @@
 import { expect, describe, it } from "vitest";
 
-import { Robot } from "../../src/models/robot.js";
-import { Grid } from "../../src/models/grid.js";
+import { Robot } from "../../src/models/robot.ts";
+import { Grid } from "../../src/models/grid.ts";
 
 describe("ProcessInstructions", () => {
   it("returns an OK status and position when given valid instructions", () => {

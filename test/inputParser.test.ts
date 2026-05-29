@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 
-import { parseInputLines } from "../src/inputParser.js";
+import { parseInputLines } from "../src/inputParser.ts";
 
 describe("parseInputLines", () => {
   it("returns true when given a valid grid position", () => {

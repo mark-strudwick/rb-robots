@@ -1,6 +1,6 @@
 import { writeFile } from "fs/promises";
 
-import type { Robot } from "./models/robot.js";
+import type { Robot } from "./models/robot.ts";
 
 export async function produceReport(robots: Robot[]) {
   const reports = robots.map((robot) => {

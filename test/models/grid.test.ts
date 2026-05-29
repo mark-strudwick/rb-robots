@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 
-import { Grid } from "../../src/models/grid.js";
+import { Grid } from "../../src/models/grid.ts";
 
 describe("CheckValidPosition", () => {
   it("returns true when given a valid grid position", () => {
